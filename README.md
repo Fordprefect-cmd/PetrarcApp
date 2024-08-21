@@ -8,11 +8,13 @@ Le regole della metrica necessarie per descrivere un testo sono programmate nell
 2)	Quali sillabe in ogni parola contengono o meno una vocale accentata (detta tonica).
 3)	Quanto è lungo il verso (una riga di testo) in sillabe, e come calcolare questo numero.
    
-  ### Per realizzare quanto detto al punto 3), è stato realizzato un database di parole italiane con sillabazione e accento, il primo di questo tipo per la lingua italiana pubblicamente disponibile, salvato sotto "df_cleaned (1).csv" nella cartella "src". 
+  #### Per realizzare quanto al punto 3), è stato compilato un database di parole italiane con sillabazione e accento, il primo di questo tipo pubblicamente disponibile per la lingua italiana, si trova come "df_cleaned (1).csv" nella cartella "src". 
   
 Il programma si occupa di ricavare e tenere traccia di questi elementi per descrivere accuratamente la ritmica e musicalità del testo attraverso un’interfaccia simile a quella delle IDE. 
 Segue un breve schema dell’ordine cronologico delle operazioni che il programma python svolge sul testo, per una spiegazione dettagliata del codice fare riferimento al file Flask_app.py nella repository, questo file è una copia offline di quello a cui fa riferimeno l’app flask per la server request, contiene tutte le funzioni citate di seguito.
-Schema Ordine di popolamento delle colonne – Tabella df_Principale
+In una tabella (Tabella df_Riassuntivo), raccogliamo le informazioni su una sola riga di poesia, detta verso. Mentre per la tabella df_Principale una riga corrisponde alle informazioni su una sola Parola.
+
+  Schema Ordine di popolamento delle colonne – Tabella df_Principale:
 
 1)	Parola (str): splitta il multiline user imput agli spazi e newlines, contiene tutte le parole nel testo creato dall’utente 
 
@@ -43,10 +45,11 @@ Schema Ordine di popolamento delle colonne – Tabella df_Principale
 12)	Alternative(lista di stringhe): Sulla base delle colonne “Sillabazione(str)” e “NumElementiSillabazione (Int)” Viene ottenuta utilizzando la funzione cerca_parole_alternative() per trovare parole alternative che fanno rima e con lo stesso numero di sillabe.
 
 13)	Riga_testo_indice_parola(str): Aggiunta per ultima al di fuori di process_string(), assegna ad ogni entry un codice che rappresenta la posizione nel testo. Espresso come [“Indice riga di testo”.”indice parola nella riga”]. Per esempio una parola che ha un valore di 3.5 significa che è la quinta parola sulla terza riga. Questo è utile per tenere traccia in modo univoco di parole che potrebbero avere lo stesso valore nella colonna “parola” ma diversi valori nella colonna Sillabazione o Posizione accenti per scelta degli utenti.
- 
-Schema Ordine di popolamento delle colonne – Tabella df_Riassuntivo
-Una riga di questa tabella (df_Riassuntivo) corrisponde alle informazioni su una sola riga di poesia, detta verso. Mentre per la tabella df_Principale una riga corrisponde alle informazioni su una sola Parola, le quali sono mappate alla loro riga di testo grazie alla colonna Riga_testo_indice_parola.
+  
 
+  
+Schema Ordine di popolamento delle colonne – Tabella df_Riassuntivo:
+  
 1)	conto_assoluto: Questa colonna rappresenta il totale delle sillabe di tutte le parole nel verso (riga di testo).
 2)	Totale_Sineresi: Questa colonna rappresenta il conteggio totale di sineresi 
 3)	Totale_Sinalefe: Questa colonna rappresenta il conteggio totale di sinalefe 
