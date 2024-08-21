@@ -4,7 +4,7 @@
 La metrica è l’insieme di regole e concetti che regolano e misurano la ritmica e musicalità di un testo.
 Al momento il programma consiste nel codice python che attraverso una rudimentale interfaccia in React prende un testo, e genera 2 dataframe che ne riassumono le proprietà, uno per ciascuna parola e uno per ogni riga di testo rispettivamente. 
 Le regole della metrica necessarie per descrivere un testo sono programmate nella funzione process_string. La quale fa uso di 3 concetti fondamentali per eseguire tutte le operazioni di analisi metriche, come descritte nel [manuale di metrica di Pietro Beltrami](https://github.com/Fordprefect-cmd/petrarc-app-react/blob/2c2d0ecc0038c0f4e97edbd6fd2294aab864f463/La%20metrica%20italiana%20(Pietro%20G.%20Beltrami)%20(Z-Library)-pages-2.pdf).
-1)	L’unita minima di base in cui dividere il testo da analizzare è la SILLABA, che si ottiene spezzando ciascuna parola (notare a proposito questi articoli https://accademiadellacrusca.it/it/consulenza/divisione-in-sillabe/302).
+1)	L’unita minima di base in cui dividere il testo da analizzare è la SILLABA, che si ottiene spezzando ciascuna parola (come spiegato in questo articolo [dell'Accademia della Crusca](https://accademiadellacrusca.it/it/consulenza/divisione-in-sillabe/302).
 2)	Quali sillabe in ogni parola contengono o meno una vocale accentata (detta tonica).
 3)	Quanto è lungo il verso (una riga di testo) in sillabe, e come calcolare questo numero.
    
