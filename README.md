@@ -11,8 +11,10 @@ Le regole della metrica necessarie per descrivere un testo sono programmate nell
   #### Per realizzare quanto al punto 3), è stato compilato un database di parole italiane con sillabazione e accento, il primo di questo tipo pubblicamente disponibile per la lingua italiana, si trova come "df_cleaned (1).csv" nella cartella "src". 
   
 Il programma si occupa di ricavare e tenere traccia di questi elementi per descrivere accuratamente la ritmica e musicalità del testo attraverso un’interfaccia simile a quella delle IDE. 
+  
 Segue un breve schema dell’ordine cronologico delle operazioni che il programma python svolge sul testo, per una spiegazione dettagliata del codice fare riferimento al file Flask_app.py nella repository, questo file è una copia offline di quello a cui fa riferimeno l’app flask per la server request, contiene tutte le funzioni citate di seguito.
-In una tabella (Tabella df_Riassuntivo), raccogliamo le informazioni su una sola riga di poesia, detta verso. Mentre per la tabella df_Principale una riga corrisponde alle informazioni su una sola Parola.
+  
+Nella tabella df_Principale ogni riga corrisponde alle informazioni su una sola Parola. Mentre nella tabella df_Riassuntivo ogni riga raccoglie le informazioni su una sola riga di poesia/testo, detta verso. 
 
   Schema Ordine di popolamento delle colonne – Tabella df_Principale:
 
